@@ -1,5 +1,6 @@
 import { About } from '../components/About';
 import { NavBar } from '../components/Navbar';
+import { Timeline } from '../components/Timeline';
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
             <About />
           </div>
         </div>
+        <Timeline />
       </main>
     </>
   );

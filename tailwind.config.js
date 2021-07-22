@@ -6,6 +6,14 @@ module.exports = {
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    screens: {
+      'xs':'480px',
+      'sm': '640px',
+      'md': '768px',
+      'lg': '1024px',
+      'xl': '1280px',
+      '2xl': '1536px'
+    },
     fontFamily: {
       sans: ['Inter', ...fontFamily.sans]
     },
@@ -18,6 +26,10 @@ module.exports = {
       },
       animation: {
         'spin-slow': 'spin 2.5s linear infinite',
+       },
+       inset:{
+         '17':'68px',
+         '26':'104px'
        }
     },
   },

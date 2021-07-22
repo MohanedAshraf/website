@@ -9,7 +9,7 @@ export const About = () => {
         <div className="lg:px-4 ">
           <h1 className="text-2xl font-bold text-gray-900 lg:text-4xl">
             Hi <span className="blog-title-emoji">👋</span>, I'm{' '}
-            <p className="inline-block text-amber-500">Mohaned Ashraf</p>
+            <p className="inline-block text-amber-500">Mohaned Ashraf</p>.
           </h1>
 
           <div className="mt-4 text-gray-800">

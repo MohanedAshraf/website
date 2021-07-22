@@ -36,3 +36,21 @@
     transform: rotate(0deg);
   }
 }
+
+@layer components {
+  .timeline-img {
+    @apply object-cover w-24 h-24 border-4 rounded-full shadow-md border-amber-500 xs:absolute md:mx-auto md:left-0 md:right-0;
+  }
+  .timeline-container {
+    @apply relative pt-2 xs:pl-28 xs:pt-0 md:w-1/2 md:ml-auto md:pl-16;
+  }
+  .timeline-container-left {
+    @apply md:ml-0 md:mr-auto md:pl-0 md:pr-16;
+  }
+  .timeline-pointer {
+    @apply absolute inset-0 w-2 h-2 transform rotate-45 bg-amber-500 left-10 xs:top-11 xs:left-26 md:left-14;
+  }
+  .timeline-pointer-left {
+    @apply md:left-auto md:right-14;
+  }
+}
