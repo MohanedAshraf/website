@@ -3,7 +3,7 @@ export const Timeline = () => {
     <>
       <div className="container relative flex flex-col px-6 mx-auto space-y-8">
         <div className="absolute inset-0 z-0 w-2 h-full bg-white shadow-md left-17 md:mx-auto md:right-0 md:left-0"></div>
-        <div className="relative z-10">
+        <div className="relative z-9">
           <img
             src="https://png.pngtree.com/thumb_back/fw800/background/20210319/pngtree-abstract-military-camouflage-pattern-background-image_588453.jpg"
             alt=""

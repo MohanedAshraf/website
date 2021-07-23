@@ -1,5 +1,6 @@
 import { About } from '../components/About';
 import { NavBar } from '../components/Navbar';
+import { Projects } from '../components/Projects';
 import { Timeline } from '../components/Timeline';
 
 export default function Home() {
@@ -11,8 +12,20 @@ export default function Home() {
           <div id="about">
             <About />
           </div>
+          <Timeline />
+          <div id="projects">
+            <Projects
+              projects={{
+                name: 'diggit',
+                description:
+                  'Diggit is a simple social media app inspired by reddit , actually it is a reddit clone.',
+                image:
+                  'https://res.cloudinary.com/dkllkhj3z/image/upload/v1626988817/Capture_ktvn2e.jpg',
+                url: 'https://diggit.vercel.app/register',
+              }}
+            />
+          </div>
         </div>
-        <Timeline />
       </main>
     </>
   );
