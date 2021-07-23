@@ -2,6 +2,7 @@ import { About } from '../components/About';
 import { Footer } from '../components/Footer';
 import { NavBar } from '../components/Navbar';
 import { Projects } from '../components/Projects';
+import Spotify from '../components/Spotify';
 import { Timeline } from '../components/Timeline';
 
 export default function Home() {
@@ -10,9 +11,13 @@ export default function Home() {
       <NavBar />
       <main className="max-w-4xl mx-auto mt-16 antialiased">
         <div className="space-y-14 lg:space-y-24">
-          <div id="about">
+          <div id="about" className="relative">
             <About />
+            <div className="absolute mx-4 my-8 right-1">
+              <Spotify />
+            </div>
           </div>
+
           <Timeline />
           <div id="projects">
             <Projects
