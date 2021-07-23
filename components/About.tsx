@@ -14,15 +14,14 @@ export const About = () => {
 
           <div className="mt-4 text-gray-800">
             <p>
-              I am fresh grade computer science student interested in web
-              development currently speak in javascript 😀 doing side projects
-              with diffrent javascript technologies &mdash; also interested in
-              solving programming challanges.
+              I am computer science fresh grade student interested in web
+              development currently speak in <strong>javascript</strong> 😀
+              doing side projects with diffrent javascript technologies &mdash;
+              also interested in solving programming challanges.
             </p>
             <p className="mt-2">
-              Welcome to my website where I share what I'm learning about
-              computer science becoming a better developer and growing a career
-              in tech .
+              Welcome to my website where I share what I'm learning &mdash;
+              becoming a better developer and growing a career in tech .
             </p>
           </div>
         </div>

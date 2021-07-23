@@ -23,7 +23,7 @@ export const Timeline = () => {
             </div>
           </div>
         </div>
-        <div className="relative z-10">
+        <div className="relative z-9">
           <img
             src="https://res.cloudinary.com/dkllkhj3z/image/upload/v1626982779/00100sportrait_00100_burst20200718104106474_cover_1_a1vwms.jpg"
             alt=""
@@ -48,7 +48,7 @@ export const Timeline = () => {
             </div>
           </div>
         </div>
-        <div className="relative z-10">
+        <div className="relative z-9">
           <img
             src="https://res.cloudinary.com/dkllkhj3z/image/upload/v1626983419/wp_20150308_12_18_23_selfie_1_hjpwh4.jpg"
             alt=""
