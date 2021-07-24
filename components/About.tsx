@@ -20,8 +20,16 @@ export const About = () => {
               solving programming challanges.
             </p>
             <p className="mt-2">
-              Welcome to my website where I share what I'm learning &mdash;
-              becoming a better developer and growing a career in tech .
+              <strong>Welcome</strong> to my website where I share what I'm
+              learning &mdash; I'm currently reading{' '}
+              <a
+                href="/https://www.crackingthecodinginterview.com"
+                className="font-bold text-green-400 wavy rotate-4 hover:text-amber-500"
+              >
+                Cracking the Codeing Interview
+              </a>{' '}
+              to improve my problem solving skills and obviously cracking the
+              interviews.
             </p>
           </div>
         </div>
