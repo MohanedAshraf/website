@@ -23,7 +23,7 @@ export const About = () => {
               <strong>Welcome</strong> to my website where I share what I'm
               learning &mdash; I'm currently reading{' '}
               <a
-                href="/https://www.crackingthecodinginterview.com"
+                href="https://www.crackingthecodinginterview.com"
                 className="font-bold text-green-400 wavy rotate-4 hover:text-amber-500"
               >
                 Cracking the Codeing Interview
