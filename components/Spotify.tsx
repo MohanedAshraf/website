@@ -2,9 +2,7 @@ import useSWR from 'swr';
 
 import fetcher from '../lib/fetcher';
 
-export default function Spotify() {
-  const { data } = useSWR('/api/spotify', fetcher);
-
+export default function Spotify({ data }) {
   return (
     <div className="flex flex-row-reverse w-full mb-8 space-x-0 sm:flex-row sm:space-x-2">
       <svg className="w-4 h-4 mt-1 ml-auto" viewBox="0 0 168 168">

@@ -1,8 +1,9 @@
 import mohaned from '../public/images/mohaned.jpg';
 import Image from 'next/image';
+import clsx from 'clsx';
 import React from 'react';
 
-export const About = () => {
+export const About = ({ spotify }) => {
   return (
     <div className="container px-4 mx-auto">
       <div className="items-center space-x-5 lg:flex lg:-mx-4 ">
@@ -35,7 +36,16 @@ export const About = () => {
         </div>
 
         <div className="relative flex-shrink-0 mt-12 lg:px-4 lg:mt-0">
-          <div className="absolute rounded-full animate-spin-slow w-50 h-50 bg-gradient-to-r from-amber-500"></div>
+          {spotify?.isPlaying && (
+            <div
+              className={clsx({
+                'absolute rounded-full animate-spin-slow w-50 h-50 bg-gradient-to-r from-spotify':
+                  spotify.isPlaying,
+                ' ': !spotify.isPlaying,
+              })}
+            ></div>
+          )}
+
           <div className="flex items-center p-1 rounded-full w-50 h-50 ">
             <Image
               src={mohaned}

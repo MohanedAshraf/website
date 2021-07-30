@@ -7,8 +7,8 @@ export const NavBar = () => {
     <div className="sticky top-0 z-10 py-2 bg-white md:py-6 md:mb-6">
       <div className="container px-4 mx-auto lg:max-w-4xl md:flex md:items-center md:justify-between">
         <Link href="/">
-          <a className="font-medium tracking-wider text-gray-900 uppercase transition-colors hover:text-amber-500">
-            Mohaned Ashraf
+          <a>
+            <img className="w-10 logo" alt="Mohaned Ashraf" />
           </a>
         </Link>
 

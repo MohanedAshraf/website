@@ -17,6 +17,14 @@
   transform: rotate(-3deg);
 }
 
+.logo {
+  content: url(/images/blacklogo.png);
+}
+
+.logo:hover {
+  content: url(/images/amberlogo.png);
+}
+
 @keyframes wave-animation {
   0% {
     transform: rotate(0deg);

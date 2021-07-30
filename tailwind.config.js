@@ -20,6 +20,7 @@ module.exports = {
     extend: {
       colors:{
         amber:colors.amber,
+        spotify: "#1ED760",
       },
       spacing:{
         50:'12.5rem'
