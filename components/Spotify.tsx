@@ -12,7 +12,7 @@ export default function Spotify({ data }) {
         />
       </svg>
       <div className="inline-flex flex-col w-full max-w-full truncate sm:flex-row">
-        {data?.songUrl ? (
+        {data?.isPlaying ? (
           <a
             className="font-medium text-gray-800 truncate dark:text-gray-200 max-w-max"
             href={data.songUrl}
@@ -30,7 +30,7 @@ export default function Spotify({ data }) {
           {' – '}
         </span>
         <p className="text-gray-500 truncate dark:text-gray-300 max-w-max">
-          {data?.artist ?? 'Spotify'}
+          {data?.isPlaying ? data?.artist : 'Spotify'}
         </p>
       </div>
     </div>

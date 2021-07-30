@@ -39,14 +39,14 @@ export const About = ({ spotify }) => {
           {spotify?.isPlaying && (
             <div
               className={clsx({
-                'absolute rounded-full animate-spin-slow w-50 h-50 bg-gradient-to-r from-spotify':
+                'absolute rounded-full md:ml-64 lg:ml-0 animate-spin-slow w-50 h-50 bg-gradient-to-r from-spotify':
                   spotify.isPlaying,
                 ' ': !spotify.isPlaying,
               })}
             ></div>
           )}
 
-          <div className="flex items-center p-1 rounded-full w-50 h-50 ">
+          <div className="flex items-center p-1 rounded-full md:mx-auto w-50 h-50 ">
             <Image
               src={mohaned}
               alt="Profile"

@@ -17,7 +17,7 @@ export default function Home() {
         <div className="space-y-14 lg:space-y-24">
           <div id="about" className="relative">
             <About spotify={data} />
-            <div className="absolute mx-4 my-8 right-1">
+            <div className="absolute sm:left-1/3 xs:left-1/4 xs:mt-4 md:left-1/3 lg:left-auto lg:mx-4 lg:my-8 lg:right-1 place-self-center">
               <Spotify data={data} />
             </div>
           </div>

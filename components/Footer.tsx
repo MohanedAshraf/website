@@ -21,6 +21,19 @@ export const Footer = () => {
             </a>
           </div>
         </div>
+        <p className="mt-2 text-xs">
+          Inspired by{' '}
+          <a
+            className="hover:text-amber-500"
+            href="https://www.delbaoliveira.com/"
+          >
+            @delba_oliveira
+          </a>{' '}
+          and{' '}
+          <a className="hover:text-amber-500" href="https://www.leerob.io">
+            @leerob
+          </a>
+        </p>
       </div>
     </div>
   );
