@@ -1,7 +1,9 @@
-import mohaned from '../public/images/mohaned.jpg';
+import mohaned from '../public/images/mohaned.gif';
 import Image from 'next/image';
 import clsx from 'clsx';
 import React from 'react';
+
+const profile_gif = process.env.PROFILE_GIF;
 
 export const About = ({ spotify }) => {
   return (
@@ -48,9 +50,8 @@ export const About = ({ spotify }) => {
 
           <div className="flex items-center p-1 rounded-full md:mx-auto w-50 h-50 ">
             <Image
-              src={mohaned}
+              src={profile_gif}
               alt="Profile"
-              placeholder="blur"
               priority={true}
               className="rounded-full bg-amber-500"
               width={200}

@@ -1,14 +1,14 @@
+const timeline_mili = process.env.TIMELINE_MILIT;
+const timeline_uni = process.env.TIMELINE_UNI;
+const timeline_sch = process.env.TIMELINE_SCH;
+
 export const Timeline = () => {
   return (
     <>
       <div className="container relative flex flex-col px-6 mx-auto space-y-8">
         <div className="absolute inset-0 z-0 w-2 h-full bg-white shadow-md left-17 md:mx-auto md:right-0 md:left-0"></div>
         <div className="relative z-9">
-          <img
-            src="https://png.pngtree.com/thumb_back/fw800/background/20210319/pngtree-abstract-military-camouflage-pattern-background-image_588453.jpg"
-            alt=""
-            className="timeline-img"
-          />
+          <img src={timeline_mili} alt="" className="timeline-img" />
           <div className="timeline-container">
             <div className="timeline-pointer" aria-hidden="true"></div>
             <div className="p-2 pl-6 bg-white rounded-md shadow-md">
@@ -24,11 +24,7 @@ export const Timeline = () => {
           </div>
         </div>
         <div className="relative z-9">
-          <img
-            src="https://res.cloudinary.com/dkllkhj3z/image/upload/v1626982779/00100sportrait_00100_burst20200718104106474_cover_1_a1vwms.jpg"
-            alt=""
-            className="timeline-img"
-          />
+          <img src={timeline_uni} alt="" className="timeline-img" />
           <div className="timeline-container timeline-container-left">
             <div
               className="timeline-pointer timeline-pointer-left"
@@ -49,11 +45,7 @@ export const Timeline = () => {
           </div>
         </div>
         <div className="relative z-9">
-          <img
-            src="https://res.cloudinary.com/dkllkhj3z/image/upload/v1626983419/wp_20150308_12_18_23_selfie_1_hjpwh4.jpg"
-            alt=""
-            className="timeline-img"
-          />
+          <img src={timeline_sch} alt="" className="timeline-img" />
           <div className="timeline-container">
             <div className="timeline-pointer" aria-hidden="true"></div>
             <div className="p-2 pl-6 bg-white rounded-md shadow-md">
