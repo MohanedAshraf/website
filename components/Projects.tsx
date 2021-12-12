@@ -52,7 +52,7 @@ const Project = ({ project }: { project: Project }) => {
     <Link href={project.url ? project.url : '/'}>
       <a>
         <div {...hoverProps}>
-          {project.image ? (
+          {
             <Tilt
               transitionSpeed={10000}
               tiltMaxAngleY={8}
@@ -64,17 +64,16 @@ const Project = ({ project }: { project: Project }) => {
             >
               <Screen>
                 <div style={{ fontSize: 0 }}>
-                  <Image
+                  <img
                     src={project.image}
                     alt="Project Preview"
                     width={500}
                     height={300}
-                    priority={true}
                   />
                 </div>
               </Screen>
             </Tilt>
-          ) : null}
+          }
           <p className="mt-6 text-xl font-bold text-gray-800">{project.name}</p>
           <p className="mt-2 text-sm text-gray-600 line-clamp-2">
             {project.description}
@@ -98,7 +97,7 @@ export const Projects = () => {
         Some of the side projects I'm currently working on.
       </h4>
       <div className="-mt-2 lg:flex lg:flex-wrap lg:-mx-6">
-        {projects.map((project) => {
+        {projects.map((project, i) => {
           return (
             <div className="mt-12 lg:w-1/2 lg:px-6">
               <Project
@@ -108,6 +107,7 @@ export const Projects = () => {
                   image: project.image,
                   url: `${project.url}`,
                 }}
+                key={i}
               />
             </div>
           );

@@ -49,11 +49,10 @@ export const About = ({ spotify }) => {
           )}
 
           <div className="flex items-center p-1 rounded-full md:mx-auto w-50 h-50 ">
-            <Image
+            <img
               src={profile_gif}
               alt="Profile"
-              priority={true}
-              className="rounded-full bg-amber-500"
+              className="z-0 rounded-full bg-amber-500"
               width={200}
               height={200}
             />
