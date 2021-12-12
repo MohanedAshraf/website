@@ -22,18 +22,8 @@ export default function Home() {
             </div>
           </div>
 
-          <Timeline />
           <div id="projects">
-            <Projects
-              projects={{
-                name: 'diggit',
-                description:
-                  'Diggit is a simple social media app inspired by reddit  actually it is a reddit clone.',
-                image:
-                  'https://res.cloudinary.com/dkllkhj3z/image/upload/v1626988817/Capture_ktvn2e.jpg',
-                url: 'https://diggit.vercel.app/register',
-              }}
-            />
+            <Projects />
           </div>
 
           <Footer />
