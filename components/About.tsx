@@ -17,10 +17,10 @@ export const About = ({ spotify }) => {
 
           <div className="mt-4 text-gray-800">
             <p>
-              I am computer science fresh grade interested in web development
+              I am a computer science fresh grade interested in web development
               currently speak in <strong>javascript</strong> 😀 doing side
-              projects with diffrent javascript technologies also interested in
-              solving programming challanges.
+              projects with different javascript technologies also interested in
+              solving programming challenges.
             </p>
             <p className="mt-2">
               <strong>Welcome</strong> to my website where I share what I'm
@@ -29,9 +29,9 @@ export const About = ({ spotify }) => {
                 href="https://www.crackingthecodinginterview.com"
                 className="font-bold text-green-400 wavy rotate-4 hover:text-amber-500"
               >
-                Cracking the Codeing Interview
+                Cracking the Coding Interview
               </a>{' '}
-              to improve my problem solving skills and obviously cracking the
+              to improve my problem-solving skills and obviously cracking the
               interviews.
             </p>
           </div>
