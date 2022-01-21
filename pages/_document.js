@@ -9,7 +9,7 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
             rel="stylesheet"
           />
-          <link rel="icon" type="image/png" href="images/blacklogo.png" />
+          <link rel="icon" type="image/png" href="images/logo.png" />
           <meta property="og:image" content="images/blacklogo.png"></meta>
           <meta property="twitter:image" content="images/blacklogo.png"></meta>
           <meta property="twitter:card" content="images/blacklogo.png"></meta>
