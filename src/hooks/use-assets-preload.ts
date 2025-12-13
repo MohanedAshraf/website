@@ -15,7 +15,7 @@ export function useAssetsPreload(assets: string[]) {
         const done = () => resolve(v);
         v.addEventListener("canplaythrough", done, { once: true });
         v.addEventListener("loadeddata", done, { once: true });
-        v.error = () => resolve(v); // Fail safe
+        v.addEventListener("error", () => resolve(v), { once: true }); // Fail safe
         v.load();
       });
 

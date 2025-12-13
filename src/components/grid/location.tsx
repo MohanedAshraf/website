@@ -180,7 +180,7 @@ export default function Location() {
   );
 }
 
-function StyleAmberTeal({ mapRef }: { mapRef: React.RefObject<MapRef> }) {
+function StyleAmberTeal({ mapRef }: { mapRef: React.RefObject<MapRef | null> }) {
   useEffect(() => {
     const map = mapRef.current?.getMap();
     if (!map) return;
