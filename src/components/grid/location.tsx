@@ -144,8 +144,8 @@ export default function Location() {
           setIsMapLoaded(true);
         }}
         initialViewState={{
-          latitude: 29.8821061,
-          longitude: 31.3047165,
+          latitude: 40.8515,
+          longitude: -74.7329,
           zoom: 11,
         }}
         maxZoom={maxZoom}

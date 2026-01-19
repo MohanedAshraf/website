@@ -3,6 +3,37 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { useEffect, useMemo, useRef, useState } from "react";
 import * as THREE from "three";
 import { useTheme } from "next-themes";
+import Image from "next/image";
+
+// Hook to detect mobile or low-power devices
+function useIsMobileOrLowPower() {
+  const [isMobile, setIsMobile] = useState(false);
+  
+  useEffect(() => {
+    const checkDevice = () => {
+      // Check screen size (mobile breakpoint at 768px)
+      const isSmallScreen = window.innerWidth < 768;
+      
+      // Check for touch device
+      const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+      
+      // Check for low hardware concurrency (fewer CPU cores)
+      const isLowPower = navigator.hardwareConcurrency ? navigator.hardwareConcurrency <= 4 : false;
+      
+      // Check for mobile user agent
+      const isMobileUserAgent = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      
+      // Consider it mobile/low-power if it's a small touch screen or explicitly mobile
+      setIsMobile(isSmallScreen || (isTouchDevice && isMobileUserAgent) || (isSmallScreen && isLowPower));
+    };
+    
+    checkDevice();
+    window.addEventListener('resize', checkDevice);
+    return () => window.removeEventListener('resize', checkDevice);
+  }, []);
+  
+  return isMobile;
+}
 
 function ParallaxPlane({ mouseRef, invert, onReady }: { mouseRef: React.MutableRefObject<{ x: number; y: number }>; invert: boolean; onReady: () => void }) {
   const colorVideo = useMemo(() => {
@@ -48,7 +79,7 @@ function ParallaxPlane({ mouseRef, invert, onReady }: { mouseRef: React.MutableR
     return t;
   }, [depthVideo]);
 
-  const { viewport, size } = useThree();
+  const { size } = useThree();
   const [texAspect, setTexAspect] = useState<number>(16 / 9);
   const seenFrame = useRef<boolean>(false);
 
@@ -111,7 +142,7 @@ function ParallaxPlane({ mouseRef, invert, onReady }: { mouseRef: React.MutableR
   const materialRef = useRef<THREE.ShaderMaterial>(null);
   const meshRef = useRef<THREE.Mesh>(null);
 
-  useFrame((state, delta) => {
+  useFrame(() => {
     // 1. Strict Sync Logic
     if (colorVideo.readyState >= 3 && depthVideo.readyState >= 3) {
         if (Math.abs(colorVideo.currentTime - depthVideo.currentTime) > 0.04) {
@@ -192,10 +223,30 @@ function ParallaxPlane({ mouseRef, invert, onReady }: { mouseRef: React.MutableR
   );
 }
 
+// Simple cover image for mobile/low-power devices
+function MobileCover() {
+  return (
+    <div className="absolute inset-0 z-0 overflow-hidden rounded-3xl">
+      <Image
+        src="/assets/images/intro.png"
+        alt="Intro"
+        fill
+        priority
+        className="object-cover"
+        sizes="(max-width: 768px) 100vw, 50vw"
+      />
+    </div>
+  );
+}
+
 export default function IntroParallax() {
+  const isMobile = useIsMobileOrLowPower();
   const mouseRef = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
   const [ready, setReady] = useState(false);
+  
   useEffect(() => {
+    if (isMobile) return; // Skip mouse tracking on mobile
+    
     const handler = (e: MouseEvent) => {
       const nx = (e.clientX / window.innerWidth - 0.5) * 2;
       const ny = (e.clientY / window.innerHeight - 0.5) * 2;
@@ -203,17 +254,24 @@ export default function IntroParallax() {
     };
     window.addEventListener("mousemove", handler, { passive: true });
     return () => window.removeEventListener("mousemove", handler);
-  }, []);
+  }, [isMobile]);
 
   const { theme } = useTheme();
 
-  // Force canvas resize after theme change (accounts for tile animation)
+  // Force canvas resize after theme change (only for desktop)
   useEffect(() => {
+    if (isMobile) return;
+    
     const timeouts = [100, 300, 500].map(delay => 
       setTimeout(() => window.dispatchEvent(new Event('resize')), delay)
     );
     return () => timeouts.forEach(clearTimeout);
-  }, [theme]);
+  }, [theme, isMobile]);
+
+  // Render simple cover image for mobile/low-power devices
+  if (isMobile) {
+    return <MobileCover />;
+  }
 
   return (
     <div className="absolute inset-0 z-0 overflow-hidden rounded-3xl">

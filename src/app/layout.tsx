@@ -9,26 +9,26 @@ const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
-    default: "Mohaned Ashraf | Software Engineer",
-    template: "%s | Mohaned Ashraf",
+    default: "Mohaned Metawea | Software Engineer",
+    template: "%s | Mohaned Metawea",
   },
   description: "Software Engineer based in Cairo, Egypt. Specializing in building scalable enterprise web applications with React, Next.js, and Node.js.",
   keywords: ["Software Engineer", "Full Stack Developer", "Frontend Engineer", "React", "Next.js", "TypeScript", "Node.js", "Cairo", "Egypt"],
-  authors: [{ name: "Mohaned Ashraf" }],
-  creator: "Mohaned Ashraf",
+  authors: [{ name: "Mohaned Metawea" }],
+  creator: "Mohaned Metawea",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://mohanedashraf.com",
-    title: "Mohaned Ashraf | Software Engineer",
+    url: "https://mohanedMetawea.com",
+    title: "Mohaned Metawea | Software Engineer",
     description: "Building scalable enterprise products and effortless user experiences.",
-    siteName: "Mohaned Ashraf",
+    siteName: "Mohaned Metawea",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mohaned Ashraf | Software Engineer",
+    title: "Mohaned Metawea | Software Engineer",
     description: "Building scalable enterprise products and effortless user experiences.",
-    creator: "@mohanedashraf",
+    creator: "@mohanedMetawea",
   },
   robots: {
     index: true,
