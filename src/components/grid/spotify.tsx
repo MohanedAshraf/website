@@ -80,22 +80,22 @@ export default function Spotify() {
               <div className="relative z-30 p-5 pt-6">
                 <div className="flex items-start justify-between">
                   <motion.h3 
-                    className="text-2xl font-black text-white leading-none tracking-tight line-clamp-3 drop-shadow-md mr-2"
+                    className="text-lg sm:text-2xl font-black text-white leading-none tracking-tight line-clamp-3 drop-shadow-md mr-2"
                     initial={{ y: -10, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.2 }}
                   >
                     {data.title}
                   </motion.h3>
-                  <FaSpotify className="text-[#1DB954] text-xl shrink-0 mt-1 drop-shadow-lg" />
+                  <FaSpotify className="text-[#1DB954] text-base sm:text-xl shrink-0 mt-1 drop-shadow-lg" />
                 </div>
               </div>
 
               {/* Bottom Content: Artist */}
               <div className="relative z-30 p-5 pb-6 flex items-end justify-between">
                  <div className="min-w-0 flex-1 mr-4">
-                    <p className="text-sm font-medium text-white/90 truncate drop-shadow-sm">{data.artist}</p>
-                    <p className="text-xs text-white/60 truncate mt-0.5">{data.album}</p>
+                    <p className="text-xs sm:text-sm font-medium text-white/90 truncate drop-shadow-sm">{data.artist}</p>
+                    <p className="text-[10px] sm:text-xs text-white/60 truncate mt-0.5">{data.album}</p>
                  </div>
               </div>
             </motion.div>
@@ -111,9 +111,8 @@ export default function Spotify() {
                  whileHover={{ scale: 1.1, rotate: 10 }}
                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
                >
-                 <FaSpotify size="3.5rem" className="text-[#1DB954]" />
+                 <FaSpotify className="text-[#1DB954] text-4xl sm:text-5xl" />
                </motion.div>
-               <p className="mt-2 text-xs font-medium text-foreground/60 group-hover:text-[#1DB954] transition-colors">Spotify</p>
             </motion.div>
           )}
         </AnimatePresence>

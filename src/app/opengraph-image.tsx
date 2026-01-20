@@ -3,7 +3,7 @@ import { ImageResponse } from 'next/og';
 export const runtime = 'edge';
 
 // Image metadata
-export const alt = 'Mohaned Ashraf | Software Engineer';
+export const alt = 'Mohaned Metawea | Software Engineer';
 export const size = {
   width: 1200,
   height: 630,
@@ -60,7 +60,7 @@ export default async function Image() {
                 backgroundClip: 'text',
                 color: 'transparent',
             }}>
-            Mohaned Ashraf
+            Mohaned Metawea
             </div>
             
             {/* Title */}
@@ -83,7 +83,7 @@ export default async function Image() {
                 borderRadius: 50,
                 border: '1px solid rgba(255, 255, 255, 0.1)'
             }}>
-            mohanedashraf.com
+            mohanedmetawea.com
             </div>
         </div>
       </div>

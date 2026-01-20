@@ -76,10 +76,7 @@ export default function AboutClient() {
                            <span className="shrink-0 w-2 h-2 rounded-full bg-amber-500" />
                            Learning <span className="text-foreground">Rust</span> 🦀
                         </div>
-                        <div className="flex items-center gap-3">
-                           <span className="shrink-0 w-2 h-2 rounded-full bg-amber-500" />
-                           Preparing for relocation to the US 🇺🇸
-                        </div>
+
                       </div>
                     </div>
                   </div>
@@ -132,7 +129,7 @@ export default function AboutClient() {
                         </div>
                         <div className="flex flex-col text-left">
                           <span className="text-[11px] font-bold text-foreground/40 uppercase tracking-wider mb-0.5">Mobile</span>
-                          <span className="text-sm font-semibold text-foreground">Pixel 6a</span>
+                          <span className="text-sm font-semibold text-foreground">iPhone 17 Pro</span>
                         </div>
                       </li>
                       <li className="flex items-start gap-4 p-3 -mx-3 rounded-2xl hover:bg-foreground/5 transition-colors">

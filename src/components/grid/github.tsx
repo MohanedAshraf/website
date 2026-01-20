@@ -47,6 +47,8 @@ export default function Github() {
   const { theme } = useTheme();
   const cardRef = useRef<HTMLDivElement>(null);
   const [daysToShow, setDaysToShow] = useState<number>(300);
+  const [blockSize, setBlockSize] = useState<number>(6);
+  const [hideLabels, setHideLabels] = useState<boolean>(true);
 
   const fetchData = useCallback(() => {
     setLoading(true);
@@ -63,7 +65,39 @@ export default function Github() {
     const observer = new ResizeObserver((entries) => {
       if (entries && entries.length > 0) {
         const cardWidth = entries[0].contentRect.width;
-        const calculatedDaysToShow = Math.floor(cardWidth / 3); // Adjust as needed
+        
+        // Responsive sizing with 3 breakpoints: mobile, tablet, desktop
+        let newBlockSize: number;
+        let padding: number;
+        
+        if (cardWidth < 350) {
+          // Mobile: smallest blocks, minimal padding
+          newBlockSize = 5;
+          padding = 40;
+        } else if (cardWidth < 500) {
+          // Large mobile / small tablet: small blocks
+          newBlockSize = 6;
+          padding = 50;
+        } else if (cardWidth < 700) {
+          // Tablet: medium blocks
+          newBlockSize = 9;
+          padding = 70;
+        } else {
+          // Desktop: large blocks, minimal padding
+          newBlockSize = 12;
+          padding = 48;
+        }
+        
+        setBlockSize(newBlockSize);
+        
+        // Hide labels on mobile, phone, and small tablet (under 700px)
+        setHideLabels(cardWidth < 700);
+
+        // Calculate days to fit: (Width - Padding) / (BlockWidth + margin) * 7
+        const blockWithMargin = newBlockSize + 2;
+        const maxWeeks = Math.floor((cardWidth - padding) / blockWithMargin);
+        const calculatedDaysToShow = Math.max(21, maxWeeks * 7); // Min 3 weeks
+        
         setDaysToShow(calculatedDaysToShow);
       }
     });
@@ -130,6 +164,7 @@ export default function Github() {
         className="relative flex h-full flex-col items-center justify-center"
       >
         <ActivityCalendar
+        key={`calendar-${hideLabels}-${blockSize}-${daysToShow}`}
         loading={loading}
         data={selectLastNDays(data?.contributions || [])}
         theme={{
@@ -140,6 +175,11 @@ export default function Github() {
         colorScheme={theme}
         blockRadius={20}
         maxLevel={4}
+        blockSize={blockSize}
+        blockMargin={2}
+        showMonthLabels={!hideLabels}
+        showTotalCount={!hideLabels}
+        showColorLegend={!hideLabels}
         />
       </Card>
     </Link>
