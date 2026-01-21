@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "../styles/globals.css";
 import { ThemeProvider } from "./providers";
 import RouteTransition from "@/components/route-transition";
@@ -71,6 +72,7 @@ export default function RootLayout({
           <RouteTransition>{children}</RouteTransition>
         </ThemeProvider>
         <GlassDistortion />
+        <Analytics />
       </body>
     </html>
   );
