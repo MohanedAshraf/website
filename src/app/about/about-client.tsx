@@ -60,23 +60,30 @@ export default function AboutClient() {
                 <Card variant="glass" className="h-full">
                   <div className="p-8 md:p-10 flex flex-col gap-6">
                     <h2 className="text-2xl font-bold tracking-tight">The Journey</h2>
-                    <div className="space-y-6 text-base leading-relaxed text-foreground/80">
+                    <div className="space-y-5 text-base leading-relaxed text-foreground/80">
                       <p>
-                        I’m a software engineer from Cairo with over <span className="font-bold text-amber-600 dark:text-amber-400">3 years of experience</span> contributing to <span className="underline decoration-teal-500/30 decoration-2 underline-offset-2 hover:decoration-teal-500 transition-all">scalable enterprise products</span>. I bridge the gap between complex engineering and effortless user experiences.
+                        Software engineer with <span className="font-bold text-amber-600 dark:text-amber-400">4 years of experience</span> building scalable products and distributed systems. Currently taking a focused career break to build <Link href="/experience/projects/rakiz" className="font-semibold text-foreground underline decoration-teal-500/50 underline-offset-4 hover:decoration-teal-500 transition-all">Rakiz</Link>, master database systems engineering, and dive deep into Rust—ahead of joining <span className="font-bold text-teal-600 dark:text-teal-400">Georgia Tech</span> for an M.S. in Computer Science in Spring 2027.
                       </p>
                       <p>
-                        Off the keyboard, I’m obsessed with high performance. Whether I’m prioritizing <span className="font-bold text-teal-600 dark:text-teal-400">fitness</span>, playing <span className="font-bold text-amber-600 dark:text-amber-400">football</span>, or grinding <span className="font-bold text-indigo-500">Fortnite</span>, I bring the same competitive energy and focus to everything I do.
+                        Beyond code, I channel that same drive into <span className="font-bold text-teal-600 dark:text-teal-400">fitness</span>, <span className="font-bold text-amber-600 dark:text-amber-400">football</span>, and gaming.
                       </p>
-                       <div className="pt-4 flex flex-col gap-2.5 text-sm font-medium text-foreground/60">
+                       <div className="pt-3 flex flex-col gap-2.5 text-sm font-medium text-foreground/60">
                         <div className="flex items-center gap-3">
                           <span className="shrink-0 w-2 h-2 rounded-full bg-teal-500 animate-pulse" />
                            Building <Link href="/experience/projects/rakiz" className="text-foreground hover:underline decoration-teal-500/50 underline-offset-4">Rakiz</Link>
                         </div>
                         <div className="flex items-center gap-3">
                            <span className="shrink-0 w-2 h-2 rounded-full bg-amber-500" />
-                           Learning <span className="text-foreground">Rust</span> 🦀
+                           Studying <span className="text-foreground">Database Systems Engineering & Rust</span> 🦀
                         </div>
-
+                        <div className="flex items-center gap-3">
+                           <span className="shrink-0 w-2 h-2 rounded-full bg-blue-500" />
+                           Reading <span className="text-foreground">Designing Data-Intensive Applications (DDIA)</span> 📖
+                        </div>
+                        <div className="flex items-center gap-3">
+                           <span className="shrink-0 w-2 h-2 rounded-full bg-yellow-500" />
+                           Incoming <span className="text-foreground">Georgia Tech M.S. CS</span> (Spring 2027) 🐝
+                        </div>
                       </div>
                     </div>
                   </div>
