@@ -9,9 +9,16 @@ import Image from "next/image";
 export default function ExperienceClient() {
   const experience = [
     {
+      role: "Career Break",
+      company: "Independent Building & Systems Engineering",
+      dates: "Jun 2026 – Present",
+      description: "Dedicated career break to build Rakiz (SaaS gym management platform), study database systems engineering, and master Rust.",
+      skills: ["Rust", "Database Systems", "Systems Engineering", "Rakiz"],
+    },
+    {
       role: "Software Developer · Frontend",
       company: "LXT",
-      dates: "Oct 2024 – Present",
+      dates: "Oct 2024 – Jun 2026",
       description: "",
       skills: ["React", "TypeScript", "Nx"],
       logo: "L",
@@ -61,6 +68,16 @@ export default function ExperienceClient() {
   ];
 
   const education = [
+    {
+      school: "Georgia Institute of Technology",
+      dates: "Spring 2027",
+      degree: "M.S. in Computer Science (Incoming)",
+      description: "",
+      skills: ["Computer Science", "Computing Systems"],
+      logo: "GT",
+      logoUrl: "/images/experience/GT.png",
+      color: "bg-[#B3A369]"
+    },
     {
       school: "Misr University for Science And Technology",
       dates: "Sep 2016 – Jul 2020",
@@ -204,20 +221,22 @@ export default function ExperienceClient() {
                             <div className="p-6">
                               <div className="flex items-start gap-4">
                                 {/* Company Logo (Image or Placeholder) */}
-                                { (job as any).logoUrl ? (
-                                   <div className="w-12 h-12 rounded-xl overflow-hidden shrink-0">
-                                      <Image 
-                                        src={(job as any).logoUrl} 
-                                        alt={job.company} 
-                                        width={48} 
-                                        height={48} 
-                                        className="w-full h-full object-contain"
-                                      />
-                                   </div>
-                                ) : (
-                                  <div className={clsx("w-12 h-12 rounded-xl flex items-center justify-center text-white text-xl font-bold shrink-0 shadow-sm", job.color)}>
-                                     {job.logo}
-                                  </div>
+                                {((job as any).logoUrl || (job as any).logo) && (
+                                  (job as any).logoUrl ? (
+                                     <div className="w-12 h-12 rounded-xl overflow-hidden shrink-0">
+                                        <Image 
+                                          src={(job as any).logoUrl} 
+                                          alt={job.company} 
+                                          width={48} 
+                                          height={48} 
+                                          className="w-full h-full object-contain"
+                                        />
+                                     </div>
+                                  ) : (
+                                    <div className={clsx("w-12 h-12 rounded-xl flex items-center justify-center text-white text-xl font-bold shrink-0 shadow-sm", (job as any).color)}>
+                                       {(job as any).logo}
+                                    </div>
+                                  )
                                 )}
                                 
                                 <div className="flex-1 min-w-0">
@@ -226,7 +245,7 @@ export default function ExperienceClient() {
                                 </div>
                               </div>
 
-                              <div className="mt-4 pl-0 md:pl-16">
+                              <div className={clsx("mt-4", ((job as any).logoUrl || (job as any).logo) ? "pl-0 md:pl-16" : "pl-0")}>
                                 {job.description && (
                                   <p className="text-sm leading-relaxed text-foreground/80 mb-5">
                                     {job.description}
